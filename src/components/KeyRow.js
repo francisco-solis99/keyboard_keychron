@@ -1,4 +1,5 @@
-import './Key.js';
+import './KeyBoardKey.js';
+
 class KeyRow extends HTMLElement {
   constructor () {
     super();
@@ -8,9 +9,6 @@ class KeyRow extends HTMLElement {
   static get styles () {
     return /* css */ `
      :host {
-      display: block;
-      background-color: red;
-      height: 50px;
      }
    `;
   }

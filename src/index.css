@@ -17,15 +17,7 @@
 .container {
   display: flex;
   justify-content: center;
+  align-items: center;
   min-width: 900px;
   min-height: 100vh;
-}
-
-.keyboard {
-  width: 80%;
-  height: 400px;
-  margin: 30px;
-  padding: 10px;
-  border-radius: 10px;
-  background: linear-gradient(to bottom right, var(--color-background1), var(--color-background2));
 }
