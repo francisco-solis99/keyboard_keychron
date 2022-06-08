@@ -1,11 +1,382 @@
 [
-  ["Escape", "Dead"], ["1", "@"], ["2", "!"], ["3", "#"], ["4", "$"], ["5", "%"], ["6", "^"], ["7", "&"], ["8", "*"], ["9", "("], ["0", ")"], ["-", "_"], ["=", "+"], ["Backspace", "Backspace"],
+  {
+    "keyCode": "Escape",
+    "keys":["Esc", "`"],
+    "style": "accent"
+  },
 
-  ["Tab", "Tab"], ["Q", "q"], ["W", "w"], ["E", "e"], ["R", "r"], ["T", "t"], ["Y", "y"], ["U", "u"], ["I", "i"], ["O", "o"], ["P", "p"], ["BracketLeft", "{"], ["BracketRight", "}"], ["Backslash", "Backslash"],
+  {
+    "keyCode": "Digit1",
+    "keys":["1", "!"],
+    "style": "soft"
+  },
 
-  ["CapsLock", "CapsLock"], ["A", "a"], ["S", "s"], ["D", "d"], ["F", "f"], ["G", "g"], ["H", "h"], ["J", "j"], ["K", "k"], ["L", "l"], [";", ":"], ["'", "\""], ["Enter", "Enter"],
+  {
+    "keyCode": "Digit2",
+    "keys":["2", "@"],
+    "style": "soft"
+  },
 
-  ["ShiftLeft", "ShiftLeft"], ["Z", "z"], ["X", "x"], ["C", "c"], ["V", "v"], ["B", "b"], ["N", "n"], ["M", "m"], [",", "<"], [".", ">"], ["ShiftRight", "ShiftRight"], ["ArrowUp", "ArrowUp"], ["Slash", "?"],
+  {
+    "keyCode": "Digit3",
+    "keys":["3", "#"],
+    "style": "soft"
+  },
 
-  ["ControlLeft", "ControlLeft"], ["MetaLeft", "MetaLeft"], ["AltLeft", "AltLeft"], ["Space", "Space"], ["AltRight", "AltRight"],["Function", "Function"],["ArrowLeft", "ArrowLeft"], ["ArrowDown", "ArrowDown"], ["ArrowRight", "ArrowRight"]
+  {
+    "keyCode": "Digit4",
+    "keys":["4", "$"],
+    "style": "soft"
+  },
+
+  {
+    "keyCode": "Digit5",
+    "keys":["5", "%"],
+    "style": "soft"
+  },
+
+  {
+    "keyCode": "Digit6",
+    "keys":["6", "^"],
+    "style": "soft"
+  },
+
+  {
+    "keyCode": "Digit7",
+    "keys":["7", "&"],
+    "style": "soft"
+  },
+
+  {
+    "keyCode": "Digit8",
+    "keys":["8", "*"],
+    "style": "soft"
+  },
+
+  {
+    "keyCode": "Digit9",
+    "keys":["9", "("],
+    "style": "soft"
+  },
+
+  {
+    "keyCode": "Digit0",
+    "keys":["0", ")"],
+    "style": "soft"
+  },
+
+  {
+    "keyCode": "Minus",
+    "keys":["-", "_"],
+    "style": "soft"
+  },
+
+  {
+    "keyCode": "Equal",
+    "keys":["=", "+"],
+    "style": "soft"
+  },
+
+  {
+    "keyCode": "Backspace",
+    "keys":["←"],
+    "style": "hard"
+  },
+
+  {
+    "keyCode": "Tab",
+    "keys":["Tab"],
+    "style": "hard"
+  },
+
+  {
+    "keyCode": "KeyQ",
+    "keys":["Q", "q"],
+    "style": "soft"
+  },
+
+  {
+    "keyCode": "KeyW",
+    "keys":["W", "w"],
+    "style": "soft"
+  },
+
+  {
+    "keyCode": "KeyE",
+    "keys":["E", "e"],
+    "style": "soft"
+  },
+
+  {
+    "keyCode": "KeyR",
+    "keys":["R", "r"],
+    "style": "soft"
+  },
+
+  {
+    "keyCode": "KeyT",
+    "keys":["T", "t"],
+    "style": "soft"
+  },
+
+  {
+    "keyCode": "KeyY",
+    "keys":["Y", "y"],
+    "style": "soft"
+  },
+
+  {
+    "keyCode": "KeyU",
+    "keys":["U", "u"],
+    "style": "soft"
+  },
+
+  {
+    "keyCode": "KeyI",
+    "keys":["I", "i"],
+    "style": "soft"
+  },
+
+  {
+    "keyCode": "KeyO",
+    "keys":["O", "o"],
+    "style": "soft"
+  },
+
+  {
+    "keyCode": "KeyP",
+    "keys":["P", "p"],
+    "style": "soft"
+  },
+
+  {
+    "keyCode": "BracketLeft",
+    "keys":["[", "{"],
+    "style": "soft"
+  },
+
+  {
+    "keyCode": "BracketRight",
+    "keys":["]", "}"],
+    "style": "soft"
+  },
+
+  {
+    "keyCode": "Backslash",
+    "keys":["\\", "|"],
+    "style": "hard"
+  },
+
+  {
+    "keyCode": "CapsLock",
+    "keys":["Caps"],
+    "style": "hard"
+  },
+
+  {
+    "keyCode": "KeyA",
+    "keys":["A", "a"],
+    "style": "soft"
+  },
+
+  {
+    "keyCode": "KeyS",
+    "keys":["S", "s"],
+    "style": "soft"
+  },
+
+  {
+    "keyCode": "KeyD",
+    "keys":["D", "d"],
+    "style": "soft"
+  },
+
+  {
+    "keyCode": "KeyF",
+    "keys":["F", "f"],
+    "style": "soft"
+  },
+
+  {
+    "keyCode": "KeyG",
+    "keys":["G", "g"],
+    "style": "soft"
+  },
+
+  {
+    "keyCode": "KeyH",
+    "keys":["H", "h"],
+    "style": "soft"
+  },
+
+  {
+    "keyCode": "KeyJ",
+    "keys":["J", "j"],
+    "style": "soft"
+  },
+
+  {
+    "keyCode": "KeyK",
+    "keys":["K", "k"],
+    "style": "soft"
+  },
+
+  {
+    "keyCode": "KeyL",
+    "keys":["L", "l"],
+    "style": "soft"
+  },
+
+  {
+    "keyCode": "Semicolon",
+    "keys":[";", ":"],
+    "style": "soft"
+  },
+
+  {
+    "keyCode": "Quote",
+    "keys":["'", "\""],
+    "style": "soft"
+  },
+
+  {
+    "keyCode": "Enter",
+    "keys":["Enter"],
+    "style": "hard"
+  },
+
+  {
+    "keyCode": "ShiftLeft",
+    "keys":["Shift"],
+    "style": "hard"
+  },
+
+  {
+    "keyCode": "KeyZ",
+    "keys":["Z", "z"],
+    "style": "soft"
+  },
+
+  {
+    "keyCode": "KeyX",
+    "keys":["X", "x"],
+    "style": "soft"
+  },
+
+  {
+    "keyCode": "KeyC",
+    "keys":["C", "c"],
+    "style": "soft"
+  },
+
+  {
+    "keyCode": "KeyV",
+    "keys":["V", "v"],
+    "style": "soft"
+  },
+
+  {
+    "keyCode": "KeyB",
+    "keys":["B", "b"],
+    "style": "soft"
+  },
+
+  {
+    "keyCode": "KeyN",
+    "keys":["N", "n"],
+    "style": "soft"
+  },
+
+  {
+    "keyCode": "KeyM",
+    "keys":["M", "m"],
+    "style": "soft"
+  },
+
+  {
+    "keyCode": "Comma",
+    "keys":[",", "<"],
+    "style": "soft"
+  },
+
+  {
+    "keyCode": "Period",
+    "keys":[".", ">"],
+    "style": "soft"
+  },
+
+  {
+    "keyCode": "ShiftRight",
+    "keys":["Shift"],
+    "style": "hard"
+  },
+
+  {
+    "keyCode": "ArrowUp",
+    "keys":["↑"],
+    "style": "soft"
+  },
+
+  {
+    "keyCode": "Slash",
+    "keys":["/", "?"],
+    "style": "soft"
+  },
+
+  {
+    "keyCode": "ControlLeft",
+    "keys":["Ctrl"],
+    "style": "hard"
+  },
+
+  {
+    "keyCode": "MetaLeft",
+    "keys":["⊞"],
+    "style": "hard"
+  },
+
+  {
+    "keyCode": "AltLeft",
+    "keys":["Alt"],
+    "style": "hard"
+  },
+
+  {
+    "keyCode": "Space",
+    "keys":[" "],
+    "style": "soft"
+  },
+
+  {
+    "keyCode": "AltRight",
+    "keys":["Alt"],
+    "style": "hard"
+  },
+
+  {
+    "keyCode": "Function",
+    "keys":["Fn"],
+    "style": "hard"
+  },
+
+  {
+    "keyCode": "ArrowLeft",
+    "keys":["←"],
+    "style": "soft"
+  },
+
+  {
+    "keyCode": "ArrowDown",
+    "keys":["↓"],
+    "style": "soft"
+  },
+
+  {
+    "keyCode": "ArrowRight",
+    "keys":["→"],
+    "style": "soft"
+  }
+
 ]
+
+

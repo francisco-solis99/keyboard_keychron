@@ -12,6 +12,8 @@ class KeyBoard extends HTMLElement {
     return /* css */ `
      :host {
       --keyboard-width: 850px;
+      --color-background1: #2c2c2e;
+      --color-background2: #3a3a3c;
      }
 
     .keyboard {
@@ -34,10 +36,9 @@ class KeyBoard extends HTMLElement {
   }
 
   renderKeys () {
-    const keysHtml = KEYS.map(key => {
-      const classKey = key[0];
+    const keysHtml = KEYS.map(({ keyCode, keys, style }) => {
       return `
-        <keyboard-key key-code="${key}" class="key__${classKey}"></keyboard-key>`;
+        <keyboard-key keys="${keys}" class="key__${keyCode} key__${style}"></keyboard-key>`;
     });
     return keysHtml.join('');
   }

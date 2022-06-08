@@ -1,24 +1,24 @@
-const specialKeys = {
-  Escape: 'Esc',
-  Backspace: '←',
-  CapsLock: 'Caps',
-  ShiftLeft: 'Shift',
-  ShiftRight: 'Shift',
-  ControlLeft: 'Ctrl',
-  ControlRight: 'Ctrl',
-  AltLeft: 'Alt',
-  AltRight: 'Alt',
-  ArrowUp: '↑',
-  ArrowDown: '↓',
-  ArrowLeft: '←',
-  ArrowRight: '→',
-  Function: 'Fn',
-  MetaLeft: '⊞',
-  Backslash: '\\',
-  Slash: '/',
-  BracketLeft: '[',
-  BracketRight: ']'
-};
+// const specialKeys = {
+//   Escape: 'Esc',
+//   Backspace: '←',
+//   CapsLock: 'Caps',
+//   ShiftLeft: 'Shift',
+//   ShiftRight: 'Shift',
+//   ControlLeft: 'Ctrl',
+//   ControlRight: 'Ctrl',
+//   AltLeft: 'Alt',
+//   AltRight: 'Alt',
+//   ArrowUp: '↑',
+//   ArrowDown: '↓',
+//   ArrowLeft: '←',
+//   ArrowRight: '→',
+//   Function: 'Fn',
+//   MetaLeft: '⊞',
+//   Backslash: '\\',
+//   Slash: '/',
+//   BracketLeft: '[',
+//   BracketRight: ']'
+// };
 class KeyBoardKey extends HTMLElement {
   constructor () {
     super();
@@ -28,30 +28,45 @@ class KeyBoardKey extends HTMLElement {
   static get styles () {
     return /* css */ `
      :host {
-      --key-width: 50px;
-      --key-height: 50px;
+       /*varriables*/
+       --color-accent: #fd4523;
+       --color-key-soft: #6b727a;
+       --color-key-hard: #595a5f;
+       --color-key-soft-border: #44464d;
+       --color-key-accent-border: #d30500;
+       --color-key-font: #fff;
+       --key-width: 50px;
+       --key-height: 50px;
+
+
        width: var(--key-width);
        height: var(--key-height);
        box-sizing: border-box;
-       border: inset 5px #44464D;
+       border: inset 5px var(--color-key-soft-border);
        border-left: inset 5px;
        border-top: inset 5px;
        cursor: pointer;
        transition: all 50ms ease-in;
-       background-color: var(--color-key-medium);
+       background-color: var(--color-key-soft);
      }
 
-     :host(:active)  {
-      border: inset 8px #44464D;
-      border-left: inset 8px;
-      border-top: inset 8px;
+    /* Custom the keyboard */
+     :host(.key__hard) {
+       background-color: var(--color-key-hard);
+     }
+
+     :host(.key__accent) {
+       background-color: var(--color-accent);
+       border-color: var(--color-key-accent-border);
+     }
+
+     :host(:active), :host(.key__active)  {
       transform: scale(0.9);
      }
 
-    /* width special keys*/
+    /* width to the special keys*/
      :host(.key__Backspace), :host(.key__ShiftLeft), :host(.key__ShiftRight){
        width: calc(var(--key-width) * 2);
-       background: red;
      }
 
      :host(.key__CapsLock) {
@@ -70,23 +85,24 @@ class KeyBoardKey extends HTMLElement {
        width: calc(var(--key-width) * 1.5);
      }
 
+     /* General styls for the key */
      .key {
        display: flex;
        justify-content: center;
        align-items: center;
        height: 100%;
-       color: #fff;
+       color: var(--color-key-font);
      }
    `;
   }
 
   connectedCallback () {
-    this.keyCode = this.getAttribute('key-code').split(',');
+    this.keys = this.getAttribute('keys').split(',');
     this.render();
   }
 
   render () {
-    const label = specialKeys[this.keyCode[0]] ?? this.keyCode[0];
+    const label = this.keys[0] || ','; // in case the comma is the label key
     this.shadowRoot.innerHTML = /* html */ `
     <style>${KeyBoardKey.styles}</style>
     <div class="key">

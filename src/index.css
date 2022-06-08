@@ -1,13 +1,3 @@
-:root {
-  --color-background1: #2c2c2e;
-  --color-background2: #3a3a3c;
-  --color-accent: #f94b02;
-  --color-key-light: #8f9498;
-  --color-key-medium: #6b727a;
-  --color-key-dark: #595a5f;
-  --color-key-shadow: #08080a;
-}
-
 * {
   margin: 0;
   padding: 0;
