@@ -13,9 +13,11 @@ const specialKeys = {
   ArrowLeft: '←',
   ArrowRight: '→',
   Function: 'Fn',
-  MetaLeft: 'Cmd',
+  MetaLeft: '⊞',
   Backslash: '\\',
-  Slash: '/'
+  Slash: '/',
+  BracketLeft: '[',
+  BracketRight: ']'
 };
 class KeyBoardKey extends HTMLElement {
   constructor () {
