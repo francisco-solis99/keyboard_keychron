@@ -16,6 +16,37 @@ class KeyBoard extends HTMLElement {
       --color-background2: #3a3a3c;
      }
 
+    /* Themes */
+     :host(.keychron){
+       --color-accent: #fd4523;
+       --color-key-soft: #6b727a;
+       --color-key-hard: #595a5f;
+       --color-key-soft-border: #44464d;
+       --color-key-accent-border: #d30500;
+       --color-key-font: #fff;
+       --color-key-hard-border: #7c7c7c;
+     }
+
+     :host(.hayabusa){
+      --color-accent: #7c929e;
+      --color-key-soft: #E6E6E6;
+      --color-key-hard: #7c929e;
+      --color-key-soft-border: #44464d;
+      --color-key-accent-border: #7d7f84;
+      --color-key-font: #4f4f52;
+      --color-key-hard-border: #7c7c7c;
+    }
+
+    :host(.instago){
+      --color-accent: #65646B;
+      --color-key-soft: #DF555A;
+      --color-key-hard: #65646B;
+      --color-key-soft-border: #a74c52;
+      --color-key-accent-border: #7d7f84;
+      --color-key-font: #fff;
+      --color-key-hard-border: #7c7c7c;
+    }
+
     .keyboard {
       display: flex;
       justify-content: space-between;
@@ -33,6 +64,7 @@ class KeyBoard extends HTMLElement {
 
   connectedCallback () {
     this.render();
+    this.classList.add('keychron');
   }
 
   renderKeys () {

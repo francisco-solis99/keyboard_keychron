@@ -29,12 +29,6 @@ class KeyBoardKey extends HTMLElement {
     return /* css */ `
      :host {
        /*varriables*/
-       --color-accent: #fd4523;
-       --color-key-soft: #6b727a;
-       --color-key-hard: #595a5f;
-       --color-key-soft-border: #44464d;
-       --color-key-accent-border: #d30500;
-       --color-key-font: #fff;
        --key-width: 50px;
        --key-height: 50px;
 
@@ -53,6 +47,7 @@ class KeyBoardKey extends HTMLElement {
     /* Custom the keyboard */
      :host(.key__hard) {
        background-color: var(--color-key-hard);
+       border-color: var(--color-key-hard-border);
      }
 
      :host(.key__accent) {
@@ -93,6 +88,11 @@ class KeyBoardKey extends HTMLElement {
        height: 100%;
        color: var(--color-key-font);
      }
+
+     .key__label-secundary {
+      margin-left: 5px;
+      font-size: 0.8rem;
+     }
    `;
   }
 
@@ -101,12 +101,22 @@ class KeyBoardKey extends HTMLElement {
     this.render();
   }
 
+  renderSecundaryLabel (secondaryLabel) {
+    const regex = /[^a-zA-Z]/;
+
+    return regex.test(secondaryLabel)
+      ? /* html */`<span class="key__label-secundary">${secondaryLabel}</span>`
+      : '';
+  }
+
   render () {
     const label = this.keys[0] || ','; // in case the comma is the label key
+    const secondaryLabel = this.keys[1] || '';
     this.shadowRoot.innerHTML = /* html */ `
     <style>${KeyBoardKey.styles}</style>
     <div class="key">
       <span>${label}</span>
+      ${this.renderSecundaryLabel(secondaryLabel)}
     </div>`;
   }
 }
