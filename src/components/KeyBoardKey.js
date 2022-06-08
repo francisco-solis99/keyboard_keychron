@@ -26,32 +26,46 @@ class KeyBoardKey extends HTMLElement {
   static get styles () {
     return /* css */ `
      :host {
-      background-color: var(--color-key-medium);
-      border: inset 5px #44464D;
+      --key-width: 50px;
+      --key-height: 50px;
+       width: var(--key-width);
+       height: var(--key-height);
+       box-sizing: border-box;
+       border: inset 5px #44464D;
        border-left: inset 5px;
        border-top: inset 5px;
-       box-sizing: border-box;
        cursor: pointer;
        transition: all 50ms ease-in;
+       background-color: var(--color-key-medium);
      }
 
      :host(:active)  {
       border: inset 8px #44464D;
       border-left: inset 8px;
       border-top: inset 8px;
+      transform: scale(0.9);
      }
 
-    /*special keys*/
-     :host(.key__Backspace), :host(.key__CapsLock), :host(.key__Enter), :host(.key__ShiftLeft), :host(.key__ShiftRight){
-      grid-column: span 2;
-      background: red;
+    /* width special keys*/
+     :host(.key__Backspace), :host(.key__ShiftLeft), :host(.key__ShiftRight){
+       width: calc(var(--key-width) * 2);
+       background: red;
+     }
+
+     :host(.key__CapsLock) {
+      width: calc(var(--key-width) * 1.8);
+     }
+
+     :host(.key__Enter) {
+      width: calc(var(--key-width) * 2.5);
      }
 
      :host(.key__Space) {
-      grid-column: span 7;
+       width: calc(var(--key-width) * 7.5);
      }
 
-     :host(.key__Tab) {
+     :host(.key__Tab), :host(.key__Backslash)  {
+       width: calc(var(--key-width) * 1.5);
      }
 
      .key {

@@ -15,10 +15,10 @@ class KeyBoard extends HTMLElement {
      }
 
     .keyboard {
-      display: grid;
-      grid-template-columns: repeat(15, minmax(50px, 1fr));
-      grid-auto-rows: 50px;
-      gap: 5px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 6px;
       width: var(--keyboard-width);
       margin: 30px 20px;
       padding: 10px;
