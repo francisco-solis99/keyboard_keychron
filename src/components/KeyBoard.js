@@ -75,6 +75,17 @@ class KeyBoard extends HTMLElement {
     return keysHtml.join('');
   }
 
+  prepareKeyBoard () {
+    document.addEventListener('keyup', (e) => {
+      const keyCode = e.code;
+      const key = this.shadowRoot.querySelector(`.key__${keyCode}`);
+      key.classList.add('key__active');
+      setTimeout(() => {
+        key.classList.remove('key__active');
+      }, 100);
+    });
+  }
+
   render () {
     this.shadowRoot.innerHTML = /* html */ `
     <style>${KeyBoard.styles}</style>
