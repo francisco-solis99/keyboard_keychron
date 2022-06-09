@@ -44,6 +44,10 @@ class KeyBoardKey extends HTMLElement {
        background-color: var(--color-key-soft);
      }
 
+     :host(.keyboard__rgb){
+       animation: shadow-pulse 10s infinite alternate;
+     }
+
     /* Custom the keyboard */
      :host(.key__hard) {
        background-color: var(--color-key-hard);
@@ -93,6 +97,28 @@ class KeyBoardKey extends HTMLElement {
       margin-left: 5px;
       font-size: 0.8rem;
      }
+
+     @keyframes shadow-pulse{
+      0% {
+        box-shadow: 2px 2px 7px var(--color-keyboard-blue), -1px -1px 7px var(--color-keyboard-blue);
+      }
+      20% {
+        box-shadow: 2px 2px 8px var(--color-keyboard-cyan), -1px -1px 8px var(--color-keyboard-cyan);
+      }
+      40% {
+        box-shadow: 2px 2px 10px var(--color-keyboard-green), -1px -1px 10px var(--color-keyboard-green);
+      }
+      60% {
+        box-shadow: 2px 2px 9px var(--color-keyboard-yellow), -1px -1px 9px var(--color-keyboard-yellow);
+      }
+      80% {
+        box-shadow: 2px 2px 10px var(--color-keyboard-magenta), -1px -1px 10px var(--color-keyboard-magenta);
+      }
+      100% {
+        box-shadow: 2px 2px 10px var(--color-keyboard-red), -1px -1px 10px var(--color-keyboard-red);
+      }
+    }
+
    `;
   }
 

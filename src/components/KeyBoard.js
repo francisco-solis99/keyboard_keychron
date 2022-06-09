@@ -6,6 +6,7 @@ class KeyBoard extends HTMLElement {
   constructor () {
     super();
     this.attachShadow({ mode: 'open' });
+    this.keySound = new Audio('keysound.mp3');
   }
 
   static get styles () {
@@ -14,6 +15,13 @@ class KeyBoard extends HTMLElement {
       --keyboard-width: 850px;
       --color-background1: #2c2c2e;
       --color-background2: #3a3a3c;
+
+      --color-keyboard-red: rgb(255, 0, 0);
+      --color-keyboard-green: rgb(0, 255, 0);
+      --color-keyboard-blue: rgb(0, 0, 255);
+      --color-keyboard-yellow: rgb(255, 255, 0);
+      --color-keyboard-cyan: rgb(0, 255, 255);
+      --color-keyboard-magenta: rgb(255, 0, 255);
      }
 
     /* Themes */
@@ -58,7 +66,34 @@ class KeyBoard extends HTMLElement {
       min-height: calc(var(--keyboard-width) / 3);
       border-radius: 10px;
       background: linear-gradient(to bottom right, var(--color-background1), var(--color-background2));
+      box-shadow: 2px 2px 10px rgb(0 0 0 / 75%);
     }
+
+    .keyboard__rgb {
+      animation: shadow-pulse 10s infinite alternate;
+    }
+
+    @keyframes shadow-pulse{
+      0% {
+        box-shadow: 2px 2px 7px var(--color-keyboard-blue), -1px -1px 7px var(--color-keyboard-blue);
+      }
+      20% {
+        box-shadow: 2px 2px 8px var(--color-keyboard-cyan), -1px -1px 8px var(--color-keyboard-cyan);
+      }
+      40% {
+        box-shadow: 2px 2px 10px var(--color-keyboard-green), -1px -1px 10px var(--color-keyboard-green);
+      }
+      60% {
+        box-shadow: 2px 2px 9px var(--color-keyboard-yellow), -1px -1px 9px var(--color-keyboard-yellow);
+      }
+      80% {
+        box-shadow: 2px 2px 10px var(--color-keyboard-magenta), -1px -1px 10px var(--color-keyboard-magenta);
+      }
+      100% {
+        box-shadow: 2px 2px 10px var(--color-keyboard-red), -1px -1px 10px var(--color-keyboard-red);
+      }
+    }
+
    `;
   }
 
@@ -77,6 +112,8 @@ class KeyBoard extends HTMLElement {
 
   prepareKeyBoard () {
     document.addEventListener('keyup', (e) => {
+      this.keySound.current = 0;
+      this.keySound.play();
       const keyCode = e.code;
       const key = this.shadowRoot.querySelector(`.key__${keyCode}`);
       key.classList.add('key__active');
